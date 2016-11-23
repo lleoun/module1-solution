@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='LunchCheck'>
+  <head>
+    <title>Lunch Checker</title>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style> body { font-size: 1.2em; }</style>
+    <title>Expressions and Interpolation</title>
+    <style>
+    .message { font-size: 1.3em; font-weight: bold; }
+  </style>
+  </head>
+  <body>
+    <div ng-controller='LunchCheckController' class="container">
+      <h1>Lunch Checker</h1>
+
+        <div class="form-group">
+        <input id="lunch-menu" type="text" ng-model="contents"
+        placeholder="list comma separated dishes you usually have for lunch"
+        class="form-control">
+        <!-- I do consider and empty item (', ,') as an item towards to the count-->
+        </div>
+        <div class="form-group">
+        <button class="btn btn-default" ng-click="checkLunch(contents)">
+          Check If Too Much</button>
+        </div>
+        <div class="form-group message">
+        {{resultMessage}}
+      </div>
+    </div>
+  </body>
+</html>
